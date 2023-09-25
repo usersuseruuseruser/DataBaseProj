@@ -1,5 +1,5 @@
 create table Products(
-	id bigint,
+	product_id bigint,
 	name varchar(30),
 	price int
 );
