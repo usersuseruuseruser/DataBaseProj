@@ -1,8 +1,3 @@
-create table Products(
-	product_id bigint,
-	name varchar(30),
-	price int
-);
 CREATE TABLE Bucket
 (
     bucket_id BIGINT
@@ -26,7 +21,7 @@ create table Reviews(
 CREATE TABLE saleInfoProduct
 (
     saleInfo_id BIGINT,
-    product_id BIGINT,
+    product_id BIGINT
 );
 CREATE TABLE SaleInfo
 (
