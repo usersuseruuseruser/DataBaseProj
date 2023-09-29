@@ -14,7 +14,7 @@ CREATE TABLE category_products
 CREATE TABLE cost_change
 (
     cost_change_id BIGINT,
-    date TIMESTAMP,
+    cost_change_date TIMESTAMP,
     new_cost FLOAT
 );
 
