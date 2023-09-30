@@ -32,7 +32,7 @@ CREATE TABLE orders_has_destinations
     delivery_date DATE,
     days_to_store INT,
     product_id BIGINT,
-    product_amount INT,
+    product_amount INT
 );
 
 CREATE TABLE product_refund
