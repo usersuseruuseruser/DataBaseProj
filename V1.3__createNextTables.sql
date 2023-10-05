@@ -1,5 +1,6 @@
 create table payments
 (
+	payment_order_id BIGINT,
 	payment_id BIGINT,
 	order_id BIGINT,
 	status VARCHAR(30),
@@ -8,12 +9,14 @@ create table payments
 
 create table purchases
 (
+	user_purchase_id BIGINT,
 	user_id BIGINT,
 	purchase_id BIGINT
 );
 
 create table paid_products
 (
+        payment_order_id BIGINT,
 	payment_id BIGINT,
 	order_id BIGINT,
 	payment_date DATE
@@ -34,6 +37,7 @@ create table producer
 
 create table replenishments
 (
+        warehouse_producer_product_id BIGINT,
 	warehouse_id BIGINT,
 	producer_id BIGINT,
 	product_id BIGINT,
@@ -43,6 +47,7 @@ create table replenishments
 
 create table products_warehouses
 (
+	product_warehouse_id BIGINT,
 	product_id BIGINT,
 	warehouse_id BIGINT,
 	products_amount INT,
@@ -52,6 +57,7 @@ create table products_warehouses
 
 create table products_orders
 (
+	order_product_id BIGINT,
 	order_id BIGINT,
 	product_id BIGINT,
 	product_amount INT

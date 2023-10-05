@@ -7,36 +7,19 @@ create table employee
 );
 create table courier_delivers_toPointOfIssue
 (
+	courier_pickup_delivery_id BIGINT,
 	courier_id bigint,
-	destination_id bigint,
+	pickupPoint_id bigint,
 	delivery_id bigint
-);
-create table destination
-(
-	id bigint,
-	address bigint
-);
-create table byCourierToTheAddress
-(
-	status text,
-	id bigint
-);
-create table controlledDestinations
-(
-	description_howToFind text
-);
-create table parcelLocker
-(
-	status text,
-	id bigint
 );
 create table pickupPoint
 (
-	status text,
-	id bigint
+	id bigint,
+	adress text
 );
 create table employee_work_in_pickpoint
 (
+	employee_pickpoint_id BIGINT,
 	pickup_point_id bigint,
 	employee_id bigint,
 	employee_status text

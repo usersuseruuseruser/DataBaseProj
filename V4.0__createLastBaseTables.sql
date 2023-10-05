@@ -7,6 +7,7 @@ CREATE TABLE category
 
 CREATE TABLE category_products
 (
+    category_products_id BIGINT,
     category_id BIGINT,
     product_id BIGINT
 );
@@ -20,13 +21,14 @@ CREATE TABLE cost_change
 
 CREATE TABLE product_undergone_costChanges
 (
+    products_costchange_id BIGINT,
     product_id BIGINT,
     cost_change_id BIGINT
 );
 
 CREATE TABLE orders_has_destinations
 (
-    id BIGINT,
+    order_destination_id BIGINT,
     order_id BIGINT,
     destination_id BIGINT,
     delivery_date DATE,
@@ -37,6 +39,7 @@ CREATE TABLE orders_has_destinations
 
 CREATE TABLE product_refund
 (
+    product_refund_id BIGINT,
     refund_id BIGINT,
     product_id BIGINT,
     product_amount INT,
@@ -45,6 +48,7 @@ CREATE TABLE product_refund
 
 CREATE TABLE order_undergone_refunds
 (
+    order_refund_id BIGINT,
     order_id BIGINT,
     refund_id BIGINT,
     refund_create_date TIMESTAMP
