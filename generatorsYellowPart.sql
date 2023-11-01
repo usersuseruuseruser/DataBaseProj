@@ -41,7 +41,7 @@ from generate_series(1,10000) id;
 
 insert into orders (status , delivery_address, start_price, final_price, registration_date)
 select
-		case
+	case
 		when random() < 0.3 then 'Ожидает подтверждения'
 		when random() < 0.3 then 'В обработке'
 		when random() < 0.3 then 'Готов к доставке'
@@ -53,8 +53,8 @@ select
     (CASE when random() < 0.5 then 'City A' else 'City B' end) || ', ' || 
     (random() * 90000 + 10000)::int,
 
-	(random()*99000 + 1000)::int,
-	(random()*99000 + 1000)::int,
+	(random()*99000 + 50000)::int,
+	(random()*49000 + 1000)::int,
 	current_date - random() * interval '365 days'
 from generate_series(1,10000) id;
 
@@ -63,4 +63,32 @@ insert into user_order (user_id , order_id)
 select
 	(random()*10000)::int,
 	(random()*10000)::int
+from generate_series(1,10000) id;
+
+insert into payments (payment_id, order_id, status, total)
+select
+	(random() * 10000)::int,
+	(random() * 10000)::int,
+	case
+		when random() < 0.3 then 'Оплачено'
+		when random() < 0.3 then 'В ожидании оплаты'
+		when random() < 0.3 then 'Отклонено'
+		else 'Возврат'
+	end,
+	(random()*99000 + 1000)::int
+from generate_series(1, 10000) id;
+
+insert into paid_products (payment_id, order_id, payment_date)
+select
+	(random()*10000)::int,
+	(random()*10000)::int,
+	current_date - random() * interval '365 days'
+from generate_series(1,10000) id;
+
+insert into product_refund (refund_id, product_id, product_amount, shabbiness)
+select
+	(random()*10000)::int,
+	(random()*10000)::int,
+	(random()*99 + 1)::int,
+	(random()*10)::int
 from generate_series(1,10000) id;
