@@ -4,12 +4,6 @@ SELECT generate_series(1, 10000);
 INSERT INTO usersbuckets(user_id, bucket_id)
 SELECT generate_series(1, 10000), generate_series(1, 10000);
 
-INSERT INTO bucket (bucket_id)
-SELECT generate_series(1, 10000);
-
-INSERT INTO usersbuckets(user_id, bucket_id)
-SELECT generate_series(1, 10000), generate_series(1, 10000);
-
 INSERT INTO products (name, price)
 SELECT 
     LEFT(md5(random()::text), 30) AS name, 
