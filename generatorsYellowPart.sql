@@ -33,8 +33,8 @@ from generate_series(1,10000) id;
 
 insert into usersreviews (user_id , review_id, review_date)
 select
-	(random()*10000)::int,
-	(random()*10000)::int,
+	(random()*9999)::int + 1,
+	(random()*9999)::int + 1,
 	current_date - random() * interval '365 days'
 from generate_series(1,10000) id;
 
@@ -61,14 +61,14 @@ from generate_series(1,10000) id;
 
 insert into user_order (user_id , order_id)
 select
-	(random()*10000)::int,
-	(random()*10000)::int
+	(random()*9999)::int + 1,
+	(random()*9999)::int + 1
 from generate_series(1,10000) id;
 
 insert into payments (payment_id, order_id, status, total)
 select
-	(random() * 10000)::int,
-	(random() * 10000)::int,
+	(random() * 9999)::int + 1,
+	(random() * 9999)::int + 1,
 	case
 		when random() < 0.3 then 'Оплачено'
 		when random() < 0.3 then 'В ожидании оплаты'
@@ -80,15 +80,16 @@ from generate_series(1, 10000) id;
 
 insert into paid_products (payment_id, order_id, payment_date)
 select
-	(random()*10000)::int,
-	(random()*10000)::int,
+	(random()*9999)::int + 1,
+	(random()*9999)::int + 1,
 	current_date - random() * interval '365 days'
 from generate_series(1,10000) id;
 
 insert into product_refund (refund_id, product_id, product_amount, shabbiness)
 select
-	(random()*10000)::int,
-	(random()*10000)::int,
+	(random()*9999)::int + 1,
+	(random()*9999)::int + 1,
 	(random()*99 + 1)::int,
 	(random()*10)::int
 from generate_series(1,10000) id;
+
