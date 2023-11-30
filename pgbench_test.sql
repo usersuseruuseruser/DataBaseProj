@@ -1,4 +1,4 @@
-\set id random(1,10000)
+\set id random(1,9223372036854775806)
 
 begin;
 
