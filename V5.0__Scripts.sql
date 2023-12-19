@@ -26,21 +26,10 @@ CREATE SEQUENCE order_undergone_refunds_seq;
 ALTER TABLE order_undergone_refunds ADD PRIMARY KEY (order_refund_id);
 ALTER TABLE order_undergone_refunds ALTER COLUMN order_refund_id SET DEFAULT nextval('order_undergone_refunds_seq');
 
-CREATE SEQUENCE employee_seq;
-ALTER TABLE employee ADD PRIMARY KEY (employee_id);
-ALTER TABLE employee ALTER COLUMN employee_id SET DEFAULT nextval('employee_seq');
-
 CREATE SEQUENCE courier_delivers_toPointOfIssue_seq;
 ALTER TABLE courier_delivers_toPointOfIssue ADD PRIMARY KEY (courier_pickup_delivery_id);
 ALTER TABLE courier_delivers_toPointOfIssue ALTER COLUMN courier_pickup_delivery_id SET DEFAULT nextval('courier_delivers_toPointOfIssue_seq');
 
-CREATE SEQUENCE pickupPoint_seq;
-ALTER TABLE pickupPoint ADD PRIMARY KEY (id);
-ALTER TABLE pickupPoint ALTER COLUMN id SET DEFAULT nextval('pickupPoint_seq');
-
-CREATE SEQUENCE employee_work_in_pickpoint_seq;
-ALTER TABLE employee_work_in_pickpoint ADD PRIMARY KEY (employee_pickpoint_id);
-ALTER TABLE employee_work_in_pickpoint ALTER COLUMN employee_pickpoint_id SET DEFAULT nextval('employee_work_in_pickpoint_seq');
 
 CREATE SEQUENCE orders_seq;
 ALTER TABLE orders ADD PRIMARY KEY (order_id);
