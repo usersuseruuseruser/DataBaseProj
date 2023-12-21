@@ -92,10 +92,12 @@ SELECT
 FROM generate_series(1, 10000);
 
 
-INSERT INTO productsbuckets (bucket_id, product_id)
+INSERT INTO productsbuckets (bucket_id, product_id, amount, date_added)
 SELECT 
     generate_series(1, 10000) AS bucket_id, 
-    (random() * 9999)::INT + 1 AS product_id;
+    (random() * 9999)::INT + 1 AS product_id,
+    (random() * 9)::INT + 1,
+    now();
 
 INSERT INTO category_products (product_id, category_id)
 SELECT 

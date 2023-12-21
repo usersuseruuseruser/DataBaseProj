@@ -71,7 +71,7 @@ check (user_to_favorite_products.date_added < now());
 
 alter table productsbuckets
 add constraint products_buckets_date_added_check
-check (productsbuckets.date_added < now());
+check (productsbuckets.date_added <= now());
 
 alter table saleinfo
 add constraint sale_info_names_check
