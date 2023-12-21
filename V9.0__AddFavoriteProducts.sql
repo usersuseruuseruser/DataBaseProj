@@ -67,7 +67,7 @@ check (productsbuckets.amount > 0 and productsbuckets.amount < 100000);
 
 alter table user_to_favorite_products
 add constraint favorite_product_date_added_check
-check (user_to_favorite_products.date_added < now());
+check (user_to_favorite_products.date_added <= now());
 
 alter table productsbuckets
 add constraint products_buckets_date_added_check
